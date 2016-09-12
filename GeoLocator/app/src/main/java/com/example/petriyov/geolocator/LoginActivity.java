@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.google.android.gms.maps.model.LatLng;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class  LoginActivity extends Activity implements View.OnClickListener {
 
 	private BroadcastReceiver locatorRecevier = new BroadcastReceiver() {
 		@Override
@@ -51,7 +51,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 			case R.id.send:
 				intent = new Intent(this, LocatorService.class);
 				intent.setAction(LocatorService.ACTION_SEND_LOCATION);
-				intent.putExtra(LocatorService.EXTRA_LAT_LNG, new LatLng(1.1, 2.2));
+				intent.putExtra(LocatorService.EXTRA_LAT_LNG, new LatLng(55.373703, 37.474764));
 				startService(intent);
 				break;
 			default:
