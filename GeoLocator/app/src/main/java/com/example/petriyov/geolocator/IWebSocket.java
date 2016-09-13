@@ -7,6 +7,4 @@ public interface IWebSocket {
 	void connect();
 
 	void disconnect();
-
-	void finishSocket();
 }

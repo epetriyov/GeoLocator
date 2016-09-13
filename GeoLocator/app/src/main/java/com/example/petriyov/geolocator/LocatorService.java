@@ -16,7 +16,7 @@ public class LocatorService extends Service implements WebSocketCallback {
 	public static final String ACTION_CONNECT = "action_connect";
 	public static final String ACTION_DISCONNECT = "action_disconnect";
 	public static final String ACTION_SEND_LOCATION = "action_send_location";
-	private final static String SERVICE_URL = "ws://mini-mdt.wheely.com?username=a&password=a";
+	private final static String SERVICE_URL = "ws://mini-mdt.wheely.com/?username=a&password=a";
 	private IWebSocket webSocket;
 	private LocalBroadcastManager localBroadcastManager;
 
@@ -54,9 +54,8 @@ public class LocatorService extends Service implements WebSocketCallback {
 	}
 
 	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		webSocket.finishSocket();
+	public void onDisconnectFinished() {
+		stopSelf();
 	}
 
 	@Override
